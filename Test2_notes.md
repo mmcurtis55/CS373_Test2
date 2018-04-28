@@ -2,9 +2,46 @@
 ---
 ## Python concepts
 - classes
+```Python
+class Ex:
+```
 - closures
+```Python
+  def outter(func):
+    varr = "this"
+    def inner(str):
+      print(str)
+
+    return inner #For a closure reutrn inner without ()
+```
 - constructors
+```Python
+  class Person:
+    def __init__(name, age):
+      self.name = name
+      self.age = age
+```
 - decorators
+```Python
+  class debug_class :
+    def __init__ (self, f) :
+        self.f = f
+
+    def __call__ (self, n) :
+        print(self.f.__name__, ":", end=" ")
+        print("input =", n, ";", end=" ")
+        m = self.f(n)
+        print("output =", m, ";")
+        return m
+
+  @debug_class
+  def f3 (n) :
+    return n + 1
+
+  def test3 () :
+    assert f3(2) == 3 # f3 : input = 2 ; output = 3 ;
+```
+  - [More about decorators](https://github.com/gpdowning/cs373/blob/master/examples/Decorators.py)
 - operator overloading
 - reflection
 - regular expressions
@@ -100,4 +137,5 @@
 
 ## design patterns
 - singleton
+  - [Python singleton example](https://github.com/gpdowning/cs373/blob/master/examples/SingletonPattern.py)
 - strategy
